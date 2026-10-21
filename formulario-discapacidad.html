@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ficha de atención · Dirección de Discapacidad · Gobierno de Esquina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Novecento es self-hosted: si colocás los archivos en ./fonts/novecento/ se usa automáticamente.
+     Si no están, el título cae en Open Sans ExtraBold en mayúsculas. */
+  @font-face { font-family:'Novecento'; src:url('./fonts/novecento/Novecento-Bold.woff2') format('woff2'); font-weight:700; font-display:swap; }
+  @font-face { font-family:'Novecento'; src:url('./fonts/novecento/Novecento-ExtraBold.woff2') format('woff2'); font-weight:800; font-display:swap; }
+
+  :root{
+    --brand:#1fa3ec; --brand-strong:#0f8bd6; --brand-press:#0f72b0;
+    --brand-soft:#d4eefe; --brand-tint:#ecf8ff;
+    --accent:#fbb912; --accent-soft:#fdeaa3;
+    --text-strong:#111418; --text-body:#1f2730; --text-muted:#54616e;
+    --surface-page:#f6f9fb; --surface-card:#ffffff; --surface-tint:#ecf8ff;
+    --border:#e1e7ec; --focus-ring:#40b2f4;
+    --red-500:#e0413c;
+    --font-body:'Open Sans',system-ui,sans-serif;
+    --font-display:'Novecento','Open Sans',system-ui,sans-serif;
+    --radius-pill:999px; --radius-lg:18px; --radius-md:12px; --radius-circle:50%;
+    --shadow-brand:0 8px 22px rgba(31,163,236,.28);
+    --shadow-soft:0 6px 18px rgba(20,63,94,.10);
+    --shadow-card:0 2px 8px rgba(20,63,94,.06);
+    --ease:cubic-bezier(.22,1,.36,1);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--font-body);color:var(--text-body);background:var(--surface-page);line-height:1.45;font-size:16px}
+
+  /* ---------- Header ---------- */
+  header.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .top-in{max-width:1200px;margin:0 auto;padding:0 24px;min-height:72px;display:flex;align-items:center;gap:14px}
+  .disc{flex:none;width:48px;height:48px;border-radius:var(--radius-circle);background:var(--brand);display:grid;place-items:center;box-shadow:0 0 0 5px rgba(31,163,236,.14)}
+  .disc svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .lockup small{display:block;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-press)}
+  .lockup strong{display:block;font-weight:800;font-size:18px;line-height:1.15;color:var(--text-strong)}
+  .endorse{margin-left:auto;text-align:right;border-left:1px solid var(--border);padding-left:16px}
+  .endorse span{display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted)}
+  .endorse b{font-weight:800;font-size:14px;color:var(--text-strong)}
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--surface-tint);border-bottom:1px solid var(--border)}
+  .hero-in{max-width:1200px;margin:0 auto;padding:44px 24px 40px}
+  .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-press);margin-bottom:10px}
+  h1{margin:0;font-family:var(--font-display);font-weight:800;text-transform:uppercase;font-size:clamp(36px,7vw,64px);line-height:1.02;letter-spacing:-.01em;color:var(--text-strong)}
+  h1 .hl{display:inline-block;background:var(--brand);color:#fff;padding:.02em .22em .0em;border-radius:10px;margin-left:.08em}
+  .hero p{max-width:620px;margin:14px 0 0;color:var(--text-muted);font-size:18px}
+  .hero p b{color:var(--text-strong)}
+
+  /* ---------- Form ---------- */
+  main{max-width:880px;margin:0 auto;padding:36px 24px 72px}
+  .card{background:var(--surface-card);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);padding:28px;margin-bottom:22px}
+  .card-head{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+  .card-head .disc{width:42px;height:42px;box-shadow:0 0 0 4px rgba(31,163,236,.14)}
+  .card-head .disc svg{width:22px;height:22px}
+  .card-head h2{margin:0;font-family:var(--font-display);font-weight:800;text-transform:uppercase;font-size:26px;line-height:1.1;color:var(--text-strong);letter-spacing:.01em}
+  .card-head p{margin:2px 0 0;font-size:14px;color:var(--text-muted)}
+
+  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+  .c12{grid-column:span 12}.c8{grid-column:span 8}.c6{grid-column:span 6}.c4{grid-column:span 4}.c3{grid-column:span 3}
+  @media(max-width:640px){.c8,.c6,.c4,.c3{grid-column:span 12}.endorse{display:none}.card{padding:20px}}
+
+  label.lbl,.lbl{display:block;font-size:14px;font-weight:700;color:var(--text-strong);margin-bottom:6px}
+  .lbl i{font-style:normal;font-weight:600;color:var(--text-muted);font-size:12px;margin-left:6px}
+  .req{color:var(--red-500)}
+  input[type=text],input[type=tel],input[type=number],input[type=date],textarea{
+    width:100%;font:inherit;color:var(--text-strong);background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-md);
+    padding:12px 14px;transition:border-color 140ms var(--ease),box-shadow 140ms var(--ease)}
+  textarea{min-height:130px;resize:vertical}
+  select{
+    width:100%;font:inherit;color:var(--text-strong);border:1.5px solid var(--border);border-radius:var(--radius-md);
+    padding:12px 40px 12px 14px;cursor:pointer;appearance:none;-webkit-appearance:none;
+    background:#fff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230f72b0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='m6 9 6 6 6-6'/></svg>") no-repeat right 14px center;
+    transition:border-color 140ms var(--ease),box-shadow 140ms var(--ease)}
+  select:hover{border-color:#c4ccd4}
+  select:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 4px rgba(64,178,244,.25)}
+  input::placeholder,textarea::placeholder{color:#9aa6b2}
+  input:hover,textarea:hover{border-color:#c4ccd4}
+  input:focus,textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 4px rgba(64,178,244,.25)}
+  .hint{font-size:12px;color:var(--text-muted);margin-top:5px}
+
+  /* Opciones Sí/No como pills */
+  .choice{display:flex;gap:10px;flex-wrap:wrap}
+  .choice input{position:absolute;opacity:0;pointer-events:none}
+  .choice label{cursor:pointer;display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border:1.5px solid var(--border);border-radius:var(--radius-pill);font-weight:700;color:var(--text-body);background:#fff;transition:all 140ms var(--ease);user-select:none}
+  .choice label:hover{border-color:var(--brand);filter:brightness(.97)}
+  .choice label:active{transform:scale(.97)}
+  .choice input:checked + label{background:var(--brand);border-color:var(--brand);color:#fff;box-shadow:var(--shadow-brand)}
+  .choice input:focus-visible + label{box-shadow:0 0 0 4px rgba(64,178,244,.35)}
+
+  .reveal{display:none;margin-top:16px;padding:16px;background:var(--brand-tint);border-radius:var(--radius-md);border:1.5px solid var(--brand-soft)}
+  .reveal.on{display:block;animation:in 220ms var(--ease)}
+  @keyframes in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+
+  /* ---------- Acciones ---------- */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:8px}
+  .btn{font:inherit;font-weight:700;cursor:pointer;border-radius:var(--radius-pill);padding:14px 28px;border:2px solid transparent;transition:transform 140ms var(--ease),filter 140ms var(--ease),box-shadow 140ms var(--ease)}
+  .btn:hover{filter:brightness(.94)}
+  .btn:active{transform:scale(.97)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(64,178,244,.35)}
+  .btn:disabled{opacity:.6;cursor:progress;filter:none;transform:none}
+  .btn-primary{background:var(--brand);color:#fff;box-shadow:var(--shadow-brand)}
+  .btn-ghost{background:#fff;color:var(--brand-press);border-color:var(--brand)}
+  .note{margin-left:auto;font-size:12px;color:var(--text-muted);max-width:300px}
+
+  .toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:var(--text-strong);color:#fff;padding:12px 22px;border-radius:var(--radius-pill);font-weight:600;opacity:0;pointer-events:none;transition:all 260ms var(--ease);box-shadow:var(--shadow-soft)}
+  .toast.on{opacity:1;transform:translate(-50%,0)}
+
+  footer{border-top:1px solid var(--border);background:#fff;text-align:center;padding:22px 24px;font-size:13px;color:var(--text-muted)}
+  footer b{color:var(--text-strong)}
+
+  /* ---------- Impresión ---------- */
+  @media print{
+    body{background:#fff}
+    header.top{position:static;backdrop-filter:none}
+    .actions,.toast,.note{display:none!important}
+    .card{box-shadow:none;break-inside:avoid;padding:18px}
+    .hero-in{padding:20px 24px}
+    .choice input:not(:checked) + label{display:none}
+    .choice input:checked + label{box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .disc,h1 .hl{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    textarea{min-height:90px}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <div class="disc" aria-hidden="true">
+      <!-- ícono: persona con accesibilidad -->
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.8"/><path d="M12 8v5h4l2 5"/><path d="M12 11H8"/><path d="M8.5 11.5a5 5 0 1 0 6.5 6.2"/></svg>
+    </div>
+    <div class="lockup">
+      <small>Dirección de</small>
+      <strong>Discapacidad</strong>
+    </div>
+    <div class="endorse">
+      <span>Municipalidad de Esquina</span>
+      <b>Gobierno de Esquina</b>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-in">
+    <span class="eyebrow">Dirección de Discapacidad</span>
+    <h1>Ficha de <span class="hl">atención</span></h1>
+    <p>Registro de personas que llegan a la Dirección. Completá los datos con cuidado y respetá siempre la confidencialidad de cada caso.</p>
+  </div>
+</section>
+
+<main>
+<form id="ficha" autocomplete="off">
+
+  <!-- 1. Datos de la persona -->
+  <section class="card">
+    <div class="card-head">
+      <div class="disc" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+      <div><h2>Datos de la persona</h2><p>Quién llega a la Dirección</p></div>
+    </div>
+    <div class="grid">
+      <div class="c4">
+        <label class="lbl" for="fecha">Fecha de atención</label>
+        <input type="date" id="fecha" name="fecha">
+      </div>
+      <div class="c8">
+        <label class="lbl" for="nombre">Nombre y apellido <span class="req">*</span></label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Nombre completo de la persona">
+      </div>
+      <div class="c8">
+        <label class="lbl" for="domicilio">Domicilio</label>
+        <input type="text" id="domicilio" name="domicilio" placeholder="Calle, número, barrio">
+      </div>
+      <div class="c4">
+        <label class="lbl" for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" inputmode="tel" placeholder="Ej.: 3777 000000">
+      </div>
+      <div class="c3">
+        <label class="lbl" for="edad">Edad</label>
+        <input type="number" id="edad" name="edad" min="0" max="120" inputmode="numeric" placeholder="Años">
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. La denuncia -->
+  <section class="card">
+    <div class="card-head">
+      <div class="disc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></div>
+      <div><h2>La denuncia</h2><p>Qué pasó y con quién</p></div>
+    </div>
+    <div class="grid">
+      <div class="c12">
+        <label class="lbl" for="motivo">¿Qué pasó? Motivos de la denuncia</label>
+        <textarea id="motivo" name="motivo" placeholder="Contá brevemente los hechos y los motivos por los que se hizo la denuncia"></textarea>
+      </div>
+      <div class="c6">
+        <label class="lbl" for="denunciado">Persona denunciada</label>
+        <input type="text" id="denunciado" name="denunciado" placeholder="Nombre y apellido">
+      </div>
+      <div class="c6">
+        <label class="lbl" for="vinculo">¿Qué es de la persona? <i>(vínculo)</i></label>
+        <select id="vinculo" name="vinculo">
+          <option value="">Elegí una opción</option>
+          <option>Pareja</option>
+          <option>Expareja</option>
+          <option>Padre</option>
+          <option>Madre</option>
+          <option>Padrastro</option>
+          <option>Madrastra</option>
+          <option>Hijo/a</option>
+          <option>Hermano/a</option>
+          <option>Abuelo/a</option>
+          <option>Tío/a</option>
+          <option>Otro familiar</option>
+          <option>Cuidador/a</option>
+          <option>Vecino/a</option>
+          <option value="Otro">Otro</option>
+        </select>
+        <div class="reveal" id="r-vinculo">
+          <label class="lbl" for="vinculo-otro">Especificá el vínculo</label>
+          <input type="text" id="vinculo-otro" name="vinculo_otro" placeholder="Escribí qué vínculo tiene">
+        </div>
+      </div>
+      <div class="c12">
+        <div class="lbl">¿La persona denunciada está detenida?</div>
+        <div class="choice">
+          <input type="radio" name="detenido" id="d-si" value="Sí"><label for="d-si">Sí, está detenida</label>
+          <input type="radio" name="detenido" id="d-no" value="No"><label for="d-no">No está detenida</label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Acompañamiento psicológico -->
+  <section class="card">
+    <div class="card-head">
+      <div class="disc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></svg></div>
+      <div><h2>Consulta psicológica</h2><p>Acompañamiento del grupo familiar</p></div>
+    </div>
+    <div class="grid">
+      <div class="c12">
+        <div class="lbl">¿Se le dio consulta psicológica?</div>
+        <div class="choice">
+          <input type="radio" name="psico" id="p-si" value="Sí"><label for="p-si">Sí</label>
+          <input type="radio" name="psico" id="p-no" value="No"><label for="p-no">No</label>
+        </div>
+        <div class="reveal" id="r-psico">
+          <label class="lbl" for="psico-quienes">¿A quiénes del grupo familiar?</label>
+          <textarea id="psico-quienes" name="psico_quienes" style="min-height:90px" placeholder="Nombre y vínculo de cada integrante que recibió consulta"></textarea>
+        </div>
+      </div>
+      <div class="c12">
+        <label class="lbl" for="obs">Observaciones <i>(opcional)</i></label>
+        <textarea id="obs" name="obs" style="min-height:90px" placeholder="Cualquier dato extra que sea importante para el seguimiento"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <div class="actions">
+    <button type="submit" class="btn btn-primary" id="btn-send">Cargar a la planilla</button>
+    <button type="button" class="btn btn-ghost" id="btn-print">Imprimir / guardar PDF</button>
+    <button type="button" class="btn btn-ghost" id="btn-copy">Copiar resumen</button>
+    <button type="reset" class="btn btn-ghost" id="btn-reset">Limpiar</button>
+    <span class="note">Al cargar, la ficha se agrega como una fila nueva en la planilla de la Dirección.</span>
+  </div>
+</form>
+</main>
+
+<footer><b>Gobierno de Esquina</b> · Dirección de Discapacidad · Esquina, Corrientes</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  // ============================================================
+  // CONFIGURACIÓN: pegá acá la URL de la aplicación web de Apps Script
+  // (ver instrucciones en apps-script-planilla.gs). Termina en /exec
+  // ============================================================
+  var SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzqULWzSm3ltKEdGNsJbbGSFo9xTHHs-n8sXs5DNtlhQ2BV_lYL_cvZkN-HR1gCW7ko/exec';
+
+  var f = document.getElementById('ficha');
+  var $ = function(id){return document.getElementById(id)};
+
+  // Fecha de hoy por defecto
+  var d = new Date(), pad = function(n){return String(n).padStart(2,'0')};
+  $('fecha').value = d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+
+  // Campos condicionales
+  function sync(){
+    $('r-vinculo').classList.toggle('on', $('vinculo').value === 'Otro');
+    $('r-psico').classList.toggle('on', $('p-si').checked);
+  }
+  f.addEventListener('change', sync);
+  f.addEventListener('reset', function(){ setTimeout(function(){
+    $('fecha').value = d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); sync();
+  },0); });
+
+  function toast(msg){
+    var t=$('toast'); t.textContent=msg; t.classList.add('on');
+    clearTimeout(toast._t); toast._t=setTimeout(function(){t.classList.remove('on')},2200);
+  }
+  function val(n){
+    // Si el vínculo es "Otro", se usa lo que escribieron
+    if(n==='vinculo' && f.elements.vinculo.value==='Otro'){ return (f.elements.vinculo_otro.value||'').trim() || 'Otro'; }
+    var e=f.elements[n]; if(!e) return ''; if(e.length && e[0] && e[0].type==='radio'){ var r=f.querySelector('input[name="'+n+'"]:checked'); return r?r.value:''; } return (e.value||'').trim(); }
+
+  // ---- Cargar a la planilla (Google Sheets vía Apps Script) ----
+  var CAMPOS = ['fecha','nombre','domicilio','telefono','edad',
+                'motivo','denunciado','vinculo','detenido','psico','psico_quienes','obs'];
+  var sending = false;
+
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    if(sending) return;
+    if(!f.reportValidity()) return;
+    if(!SHEETS_URL){ toast('Falta conectar la planilla (ver SHEETS_URL)'); return; }
+
+    var body = new URLSearchParams();
+    CAMPOS.forEach(function(n){ body.append(n, val(n)); });
+
+    var btn = $('btn-send'), txt = btn.textContent;
+    sending = true; btn.disabled = true; btn.textContent = 'Cargando…';
+
+    // no-cors: Apps Script no devuelve cabeceras CORS; si la petición sale, se asume cargada.
+    fetch(SHEETS_URL, { method:'POST', mode:'no-cors', body: body })
+      .then(function(){
+        toast('Ficha cargada en la planilla');
+        f.reset();
+      })
+      .catch(function(){
+        toast('No se pudo cargar. Revisá la conexión e intentá de nuevo');
+      })
+      .then(function(){
+        sending = false; btn.disabled = false; btn.textContent = txt;
+      });
+  });
+
+  $('btn-print').addEventListener('click', function(){
+    if(!f.reportValidity()) return;
+    window.print();
+  });
+
+  $('btn-copy').addEventListener('click', function(){
+    if(!f.reportValidity()) return;
+    var l = [
+      'FICHA DE ATENCIÓN · DIRECCIÓN DE DISCAPACIDAD · GOBIERNO DE ESQUINA',
+      'Fecha: '+val('fecha'),
+      'Nombre y apellido: '+val('nombre'),
+      'Domicilio: '+val('domicilio'),
+      'Teléfono: '+val('telefono'),
+      'Edad: '+val('edad'),
+      '',
+      'Qué pasó / motivos de la denuncia: '+val('motivo'),
+      'Persona denunciada: '+val('denunciado'),
+      'Vínculo: '+val('vinculo'),
+      'Detenido/a: '+val('detenido'),
+      '',
+      'Consulta psicológica: '+val('psico')+(val('psico_quienes')?' · Grupo familiar: '+val('psico_quienes'):''),
+      'Observaciones: '+val('obs')
+    ].join('\n');
+    var done=function(){toast('Resumen copiado')};
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(l).then(done,function(){toast('No se pudo copiar')});
+    } else { toast('Tu navegador no permite copiar'); }
+  });
+})();
+</script>
+</body>
+</html>
