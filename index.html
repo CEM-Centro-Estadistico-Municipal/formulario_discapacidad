@@ -176,15 +176,90 @@
       </div>
       <div class="c8">
         <label class="lbl" for="domicilio">Domicilio</label>
-        <input type="text" id="domicilio" name="domicilio" placeholder="Calle, número, barrio">
+        <input type="text" id="domicilio" name="domicilio" placeholder="Calle y número">
       </div>
       <div class="c4">
         <label class="lbl" for="telefono">Teléfono</label>
         <input type="tel" id="telefono" name="telefono" inputmode="tel" placeholder="Ej.: 3777 000000">
       </div>
-      <div class="c3">
+      <div class="c8">
+        <label class="lbl" for="barrio">Barrio</label>
+        <select id="barrio" name="barrio">
+          <option value="">Elegí un barrio</option>
+          <option>21 Viviendas B° Santa Catalina</option>
+          <option>128 Viviendas B° Raúl Ricardo Alfonsín</option>
+          <option>39 Viviendas</option>
+          <option>48 Viviendas B° Unión de Cooperativas</option>
+          <option>65 Viviendas B° Augusto César Díaz</option>
+          <option>B° Bello Horizonte</option>
+          <option>B° Obras Sanitarias</option>
+          <option>35 Viviendas B° Matadero Viejo</option>
+          <option>100 Viviendas Padre Diego Orlandini</option>
+          <option>90 Viviendas Padre Rafael Ledesma</option>
+          <option>150 Viviendas San Antonio de Padua</option>
+          <option>50 Viviendas</option>
+          <option>EPAM San Cayetano</option>
+          <option>EPAM 30 Viviendas - CIC</option>
+          <option>61 Viviendas Omar Mancini</option>
+          <option>80 Viviendas</option>
+          <option>10 Viviendas Oñandive – Viejo Hospital</option>
+          <option>30 Viviendas B° Las Palmeras</option>
+          <option value="Otro">Otro / no figura en la lista</option>
+        </select>
+        <div class="reveal" id="r-barrio">
+          <label class="lbl" for="barrio-otro">Especificá el barrio o paraje</label>
+          <input type="text" id="barrio-otro" name="barrio_otro" placeholder="Escribí el barrio o paraje">
+        </div>
+      </div>
+      <div class="c4">
         <label class="lbl" for="edad">Edad</label>
         <input type="number" id="edad" name="edad" min="0" max="120" inputmode="numeric" placeholder="Años">
+      </div>
+
+      <div class="c12">
+        <div class="lbl">¿La persona con discapacidad es autónoma?</div>
+        <div class="choice">
+          <input type="radio" name="autonoma" id="a-si" value="Sí"><label for="a-si">Sí, es autónoma</label>
+          <input type="radio" name="autonoma" id="a-no" value="No"><label for="a-no">No es autónoma</label>
+        </div>
+        <div class="reveal" id="r-resp">
+          <div class="lbl" style="margin-bottom:12px">Datos del responsable a cargo</div>
+          <div class="grid">
+            <div class="c8">
+              <label class="lbl" for="resp-nombre">Nombre y apellido</label>
+              <input type="text" id="resp-nombre" name="resp_nombre" placeholder="Nombre completo del responsable">
+            </div>
+            <div class="c4">
+              <label class="lbl" for="resp-dni">DNI</label>
+              <input type="text" id="resp-dni" name="resp_dni" inputmode="numeric" placeholder="Sin puntos">
+            </div>
+            <div class="c6">
+              <label class="lbl" for="resp-vinculo">Vínculo con la persona</label>
+              <select id="resp-vinculo" name="resp_vinculo">
+                <option value="">Elegí una opción</option>
+                <option>Padre</option>
+                <option>Madre</option>
+                <option>Hijo/a</option>
+                <option>Hermano/a</option>
+                <option>Abuelo/a</option>
+                <option>Tío/a</option>
+                <option>Pareja</option>
+                <option>Otro familiar</option>
+                <option>Tutor/a o curador/a</option>
+                <option>Cuidador/a</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+            <div class="c6">
+              <label class="lbl" for="resp-telefono">Teléfono del responsable</label>
+              <input type="tel" id="resp-telefono" name="resp_telefono" inputmode="tel" placeholder="Ej.: 3777 000000">
+            </div>
+            <div class="c12">
+              <label class="lbl" for="resp-domicilio">Domicilio del responsable <i>(si es distinto)</i></label>
+              <input type="text" id="resp-domicilio" name="resp_domicilio" placeholder="Calle, número, barrio">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -200,6 +275,61 @@
         <label class="lbl" for="motivo">¿Qué pasó? Motivos de la denuncia</label>
         <textarea id="motivo" name="motivo" placeholder="Contá brevemente los hechos y los motivos por los que se hizo la denuncia"></textarea>
       </div>
+
+      <div class="c6">
+        <label class="lbl" for="denunciante">¿Quién hizo la denuncia?</label>
+        <select id="denunciante" name="denunciante">
+          <option value="">Elegí una opción</option>
+          <option>La propia persona</option>
+          <option>Su responsable a cargo</option>
+          <option>Un familiar</option>
+          <option>Un vecino/a</option>
+          <option>Una institución (escuela, centro de salud, etc.)</option>
+          <option value="Otro">Otra persona</option>
+        </select>
+      </div>
+      <div class="c6">
+        <label class="lbl" for="lugar">¿Dónde se hizo la denuncia?</label>
+        <select id="lugar" name="lugar">
+          <option value="">Elegí una opción</option>
+          <option>Comisaría</option>
+          <option>Juzgado</option>
+          <option>Fiscalía</option>
+          <option>Dirección de Discapacidad</option>
+          <option>Otra dependencia municipal</option>
+          <option value="Otro">Otro lugar</option>
+        </select>
+        <div class="reveal" id="r-lugar">
+          <label class="lbl" for="lugar-otro">Especificá dónde</label>
+          <input type="text" id="lugar-otro" name="lugar_otro" placeholder="Escribí el lugar">
+        </div>
+      </div>
+      <div class="c12" id="b-denunciante-datos" style="display:none">
+        <div class="reveal on" style="margin-top:0">
+          <div class="grid">
+            <div class="c6">
+              <label class="lbl" for="denunciante-nombre">Nombre y apellido de quien denunció</label>
+              <input type="text" id="denunciante-nombre" name="denunciante_nombre" placeholder="Nombre completo">
+            </div>
+            <div class="c6">
+              <label class="lbl" for="denunciante-contacto">Teléfono de contacto <i>(opcional)</i></label>
+              <input type="tel" id="denunciante-contacto" name="denunciante_contacto" inputmode="tel" placeholder="Ej.: 3777 000000">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="c12">
+        <div class="lbl">¿La persona le contó lo que pasó a alguien, y esa otra persona fue quien denunció?</div>
+        <div class="choice">
+          <input type="radio" name="aviso" id="av-si" value="Sí"><label for="av-si">Sí</label>
+          <input type="radio" name="aviso" id="av-no" value="No"><label for="av-no">No</label>
+        </div>
+        <div class="reveal" id="r-aviso">
+          <label class="lbl" for="aviso-quien">¿A quién le contó?</label>
+          <input type="text" id="aviso-quien" name="aviso_quien" placeholder="Nombre y vínculo de esa persona (ej.: Ana Gómez, vecina)">
+        </div>
+      </div>
+
       <div class="c6">
         <label class="lbl" for="denunciado">Persona denunciada</label>
         <input type="text" id="denunciado" name="denunciado" placeholder="Nombre y apellido">
@@ -295,6 +425,12 @@
   function sync(){
     $('r-vinculo').classList.toggle('on', $('vinculo').value === 'Otro');
     $('r-psico').classList.toggle('on', $('p-si').checked);
+    $('r-barrio').classList.toggle('on', $('barrio').value === 'Otro');
+    $('r-resp').classList.toggle('on', $('a-no').checked);
+    $('r-lugar').classList.toggle('on', $('lugar').value === 'Otro');
+    $('r-aviso').classList.toggle('on', $('av-si').checked);
+    var dn = $('denunciante').value;
+    $('b-denunciante-datos').style.display = (dn && dn !== 'La propia persona') ? 'block' : 'none';
   }
   f.addEventListener('change', sync);
   f.addEventListener('reset', function(){ setTimeout(function(){
@@ -308,11 +444,20 @@
   function val(n){
     // Si el vínculo es "Otro", se usa lo que escribieron
     if(n==='vinculo' && f.elements.vinculo.value==='Otro'){ return (f.elements.vinculo_otro.value||'').trim() || 'Otro'; }
+    if(n==='barrio' && f.elements.barrio.value==='Otro'){ return (f.elements.barrio_otro.value||'').trim() || 'Otro'; }
+    if(n==='lugar' && f.elements.lugar.value==='Otro'){ return (f.elements.lugar_otro.value||'').trim() || 'Otro'; }
+    // Si la persona es autónoma, no se envían datos del responsable
+    if(n.indexOf('resp_')===0 && f.querySelector('input[name="autonoma"]:checked') && f.querySelector('input[name="autonoma"]:checked').value==='Sí'){ return ''; }
+    // Si denunció la propia persona, no se envían datos de otro denunciante
+    if((n==='denunciante_nombre'||n==='denunciante_contacto') && f.elements.denunciante.value==='La propia persona'){ return ''; }
+    if(n==='aviso_quien' && !($('av-si').checked)){ return ''; }
     var e=f.elements[n]; if(!e) return ''; if(e.length && e[0] && e[0].type==='radio'){ var r=f.querySelector('input[name="'+n+'"]:checked'); return r?r.value:''; } return (e.value||'').trim(); }
 
   // ---- Cargar a la planilla (Google Sheets vía Apps Script) ----
-  var CAMPOS = ['fecha','nombre','domicilio','telefono','edad',
-                'motivo','denunciado','vinculo','detenido','psico','psico_quienes','obs'];
+  var CAMPOS = ['fecha','nombre','domicilio','barrio','telefono','edad',
+                'autonoma','resp_nombre','resp_dni','resp_vinculo','resp_telefono','resp_domicilio',
+                'motivo','denunciante','denunciante_nombre','denunciante_contacto','lugar','aviso','aviso_quien',
+                'denunciado','vinculo','detenido','psico','psico_quienes','obs'];
   var sending = false;
 
   f.addEventListener('submit', function(ev){
@@ -353,17 +498,23 @@
       'Fecha: '+val('fecha'),
       'Nombre y apellido: '+val('nombre'),
       'Domicilio: '+val('domicilio'),
+      'Barrio: '+val('barrio'),
       'Teléfono: '+val('telefono'),
       'Edad: '+val('edad'),
+      'Es autónoma: '+val('autonoma'),
+      (val('autonoma')==='No' ? 'Responsable a cargo: '+val('resp_nombre')+' · DNI: '+val('resp_dni')+' · Vínculo: '+val('resp_vinculo')+' · Tel.: '+val('resp_telefono')+' · Domicilio: '+val('resp_domicilio') : null),
       '',
       'Qué pasó / motivos de la denuncia: '+val('motivo'),
+      'Denuncia hecha por: '+val('denunciante')+(val('denunciante_nombre')?' ('+val('denunciante_nombre')+(val('denunciante_contacto')?', tel. '+val('denunciante_contacto'):'')+')':''),
+      'Lugar de la denuncia: '+val('lugar'),
+      'Denunció tras el aviso de la persona: '+val('aviso')+(val('aviso_quien')?' · Le contó a: '+val('aviso_quien'):''),
       'Persona denunciada: '+val('denunciado'),
       'Vínculo: '+val('vinculo'),
       'Detenido/a: '+val('detenido'),
       '',
       'Consulta psicológica: '+val('psico')+(val('psico_quienes')?' · Grupo familiar: '+val('psico_quienes'):''),
       'Observaciones: '+val('obs')
-    ].join('\n');
+    ].filter(function(x){return x!==null}).join('\n');
     var done=function(){toast('Resumen copiado')};
     if(navigator.clipboard && navigator.clipboard.writeText){
       navigator.clipboard.writeText(l).then(done,function(){toast('No se pudo copiar')});
